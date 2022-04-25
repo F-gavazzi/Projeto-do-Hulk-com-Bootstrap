@@ -1,0 +1,13 @@
+.bg-darkred{
+    background-color: darkred;
+}
+.bg-darkorange{
+    background-color:rgb(198, 7, 7);
+}
+.bg-darkfooter{
+    background-color: #414141;
+}
+
+.tc-dark{
+  font-weight: bold;
+}
