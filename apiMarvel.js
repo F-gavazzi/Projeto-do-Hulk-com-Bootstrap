@@ -10,15 +10,14 @@ function getParams() {
   };
 }
 
-function getApi(params) {
+const params = getParams();
+const requisicao = getApi(params);
+
+function getApi() {
   const res = new XMLHttpRequest();
   res.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      const response = JSON.parse(res.responseText);
-    
-    }
-  };
-  res.open("GET",`http://gateway.marvel.com/v1/public/comics?ts=${params.ts}&apikey=${params.keyPublic}&hash${params.hash}`, true);
+      const response = JSON.parse(res.responseText); }};
+  res.open("GET",`http://gateway.marvel.com/v1/public/comics?ts=${params.ts}&apikey=${params.keyPublic}&hash=${params.hash}`,true);
   res.send();
 }
-
