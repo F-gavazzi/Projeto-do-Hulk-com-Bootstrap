@@ -13,19 +13,20 @@ function getParams() {
 
 function getApi() {
   const res = new XMLHttpRequest();
+  const url= `http://gateway.marvel.com/v1/public/characters?ts=${params.ts}&apikey=${params.keyPublic}&hash=${params.hash}`;
   res.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const response = JSON.parse(res.responseText); 
-      console.log(response);
+      getCard(response)
     }
   };
-  res.open("GET",`http://gateway.marvel.com/v1/public/characters?ts=${params.ts}&apikey=${params.keyPublic}&hash=${params.hash}`,true); 
+  res.open("GET",url,true); 
   res.send();
 }
 const params = getParams();
 const requisicao = getApi(params);
 
 
-function getPerson(){
+function getCard(response){
 
 }
