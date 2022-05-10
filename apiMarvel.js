@@ -120,6 +120,7 @@ cretePersonagem();
 
 function urlSepara(url){
   const id = url.split("/")
+  const item = id.length -1 
 
 }
 
