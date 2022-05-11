@@ -9,7 +9,7 @@ function getParams() {
     apiKey,
     hash,
   };
-  urlId
+
 }
 function createPersonagem(personagem){
   /////////\\\\\////////////////ID\\\\\\/\/\/\//\/\/\/\/\////ID\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ID/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
@@ -39,7 +39,7 @@ function createPersonagem(personagem){
   historias.innerText = "Histórias";
 
     const table = document.createElement("table");
-    table.classList.add("table", "table-bordered","text-center" ,"border" , "border-dark" ,"mt-4" );
+    table.classList.add("table", "table-bordered","align-self-center" ,"border" , "border-dark" ,"mt-4" );
 
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
@@ -69,23 +69,36 @@ function createPersonagem(personagem){
       tr1.append(td1);
       tr1.append(td2);
       tr1.append(td3);
-      tbody.append(tr1)
+      tbody.append(tr1);
       
     })
 //\\/\/\/\/\/\/\/\/\/\/\//\/\/\/\///\//\/\/LIST\/\/\/\/\\//\\/\//\\//\LIST\/\/\/\/\//\\/\/\/\/\/\/\\/\/LISTZ\;\;\;\;\;\;Z;\\;;\
-    const ul = document.createElement("ul");
-    ul.classList.add("ml-2");
-    const li
+  const lis =document.createElement("h3")  
+ lis.classList.add("mt-3", "h5", "text-white");
+ lis.innerText = "Lista de Aparições (comics)";
+  const ul = document.createElement("ul");
+    ul.classList.add("m-2","mt-4", "ml-4", "text-white");
+    
+    personagem.comics.items.forEach(item => {
+      const li = document.createElement("li");
+      li.innerText = item.name;
+  
+      ul.append(li);
+         
+
+    });
 
   content.append(title)
   content.append(namePersonagem)
   content.append(text)
   content.append(img)
   content.append(historias)
-    thead.append(tr);
-    table.append(thead);
-    table.append(tbody);
-    content.append(table)
+  thead.append(tr);
+  table.append(thead);
+  table.append(tbody);
+  content.append(table)
+  list.append(lis)
+  list.append(ul)
 }
 
 function urlSepara(url){
